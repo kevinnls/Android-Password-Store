@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - develop
+  workflow_dispatch:
 
 name: Deploy snapshot builds
 jobs:
