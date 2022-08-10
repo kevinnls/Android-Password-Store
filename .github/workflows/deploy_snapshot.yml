@@ -30,12 +30,20 @@ jobs:
 
     - name: Build release app
       uses: gradle/gradle-build-action@v2.2.2
+      if: "false"
       env:
         SNAPSHOT: "true"
         SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
       with:
         arguments: collectFreeReleaseApks collectNonFreeReleaseApks -PsentryUploadMappings
+        
+    - name: Build debug app
+      uses: gradle/gradle-build-action@v2.2.2
+      env:
+        SNAPSHOT: "true"
+      with:
+        arguments: collectFreeDebugApks collectNonFreeDebugApks
 
     - name: Clean secrets
       run: scripts/signing-cleanup.sh
