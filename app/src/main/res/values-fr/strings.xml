@@ -46,14 +46,13 @@
   <!-- Git Handler -->
   <string name="ssh_preferences_dialog_text">Vous devez importer ou générer votre fichier de clef SSH dans les préférences</string>
   <string name="ssh_preferences_dialog_title">Absence de clef SSH</string>
-  <string name="ssh_preferences_dialog_import">Importer</string>
+  <string name="button_label_import">Importer</string>
   <string name="ssh_preferences_dialog_generate">Générer</string>
   <string name="passphrase_dialog_title">Authentification</string>
   <string name="passphrase_dialog_text">Saisissez le mot de passe associé à votre clef SSH. Laisser vide si il n\'y a pas de mot de passe.</string>
   <string name="password_dialog_text">Renseignez le mot de passe pour ce dépôt</string>
   <!-- Clone fragment -->
   <string name="server_url">URL du dépôt</string>
-  <string name="server_branch">Branche</string>
   <string name="connection_mode">Méthode d\'authentification</string>
   <!-- Git Config fragment -->
   <string name="git_user_name_hint">Nom d\'utilisateur</string>
@@ -258,7 +257,6 @@
   <string name="preference_custom_public_suffixes_title">Domaines personnalisés</string>
   <string name="preference_custom_public_suffixes_summary">Le remplissage automatique distinguera les sous-domaines de ces domaines</string>
   <string name="preference_custom_public_suffixes_hint">societe.com\npersonnel.com</string>
-  <!-- OpenKeychain errors -->
   <!-- Password creation failure -->
   <string name="password_creation_file_fail_title">Erreur</string>
   <string name="password_creation_file_write_fail_message">Impossible d\'écrire le fichier de mot de passe dans le magasin, veuillez réessayer.</string>
@@ -266,7 +264,7 @@
   <string name="password_creation_duplicate_error">Le fichier existe déjà, veuillez utiliser un autre nom</string>
   <string name="add_otp">Ajouter OTP</string>
   <string name="otp_import_success">Configuration TOTP importée avec succès</string>
-  <string name="otp_import_failure">Impossible d\'importer la configuration TOTP</string>
+  <string name="otp_import_failure_generic">Impossible d\'importer la configuration TOTP</string>
   <string name="exporting_passwords">Exportation des mots de passe…</string>
   <string name="invalid_filename_text">Le nom du fichier ne doit pas contenir \'/\', définir le répertoire parent</string>
   <string name="directory_hint">Dossier</string>
@@ -282,7 +280,6 @@
   <string name="git_operation_running">Opération git en cours…</string>
   <string name="git_break_out_of_detached_success">Il y a eu un conflit lors de la tentative de rebase. Votre branche locale %1$s a été poussée vers une autre branche nommée %2$s\n Utilisez cette branche pour résoudre les conflits sur votre ordinateur</string>
   <string name="git_break_out_of_detached_unneeded">Le dépôt n\'est pas rebasé, pas besoin de pousser vers une autre branche</string>
-  <!-- OpenKeychain not installed -->
   <!-- GPG key selection in folder creation -->
   <string name="folder_creation_err_file_exists">Un fichier portant ce nom existe déjà</string>
   <string name="folder_creation_err_folder_exists">Un dossier portant ce nom existe déjà</string>
