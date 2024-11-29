@@ -31,15 +31,16 @@
   <string name="edit">Редактировать</string>
   <string name="delete">Удалить</string>
   <string name="password_exists_title">Пароль уже существует!</string>
-  <string name="password_exists_message">Это перезапишет %1$sна%2$s</string>
+  <string name="password_exists_message">Это перезапишет %1$s на %2$s</string>
   <string name="password_move_error_title">Ошибка при перемещении паролей</string>
   <string name="password_move_error_message">Не удалось переместить %1$s в %2$s</string>
   <!-- git commits -->
   <string name="git_commit_add_text">Добавлен пароль %1$s из хранилища.</string>
   <string name="git_commit_edit_text">Отредактирован %1$s из хранилища.</string>
-  <string name="git_commit_remove_text">Удалить %1$sиз хранилища.</string>
-  <string name="git_commit_move_text">Переименовать %1$sв%2$s.</string>
+  <string name="git_commit_remove_text">Удалить %1$s из хранилища.</string>
+  <string name="git_commit_move_text">Переименовать %1$s в %2$s.</string>
   <string name="git_commit_move_multiple_text">Переместить несколько паролей в %1$s.</string>
+  <string name="git_commit_gpg_id">Инициализация GPG ID через %1$s.</string>
   <!-- PGPHandler -->
   <string name="clipboard_copied_text">Скопировано в буфер обмена</string>
   <string name="file_toast_text">Пожалуйста, укажите имя файла</string>
@@ -50,14 +51,13 @@
   <!-- Git Handler -->
   <string name="ssh_preferences_dialog_text">Пожалуйста, импортируйте или сгенерируйте новый SSH ключ в настройках</string>
   <string name="ssh_preferences_dialog_title">Нет SSH ключа</string>
-  <string name="ssh_preferences_dialog_import">Импортировать</string>
+  <string name="button_label_import">Импортировать</string>
   <string name="ssh_preferences_dialog_generate">Сгенерировать</string>
   <string name="passphrase_dialog_title">Авторизоваться</string>
   <string name="passphrase_dialog_text">Пожалуйста, введите пароль от SSH ключа. Оставьте поле пустым, если пароль отсутствует.</string>
   <string name="password_dialog_text">Пожалуйста, введите пароль для репозитория</string>
   <!-- Clone fragment -->
   <string name="server_url">URL репозитория</string>
-  <string name="server_branch">Ветка</string>
   <string name="connection_mode">Тип авторизации</string>
   <!-- Git Config fragment -->
   <string name="git_user_name_hint">Имя пользователя</string>
@@ -108,9 +108,14 @@
   <string name="pref_category_autofill_title">Автозаполнение</string>
   <string name="pref_autofill_enable_title">Включить автозаполнение</string>
   <string name="pref_category_misc_title">Другое</string>
+  <string name="pref_clear_clipboard_summary">Включите, чтобы заполнить историю буфера обмена на устройствах, поддерживающих такую функцию, последовательными числами, стирая любые пароли</string>
   <string name="pref_git_delete_repo_summary">Удалить локальный (скрытый) репозиторий</string>
   <string name="prefs_export_passwords_title">Экспортировать пароли</string>
   <string name="prefs_export_passwords_summary">Экспортировать пароли в открытом виде во внешнее хранилище</string>
+  <string name="pref_import_pgp_key_title">Импортировать PGP-ключ</string>
+  <string name="pref_pgp_key_manager_title">Менеджер ключей</string>
+  <string name="pref_pgp_ascii_armor_title">Шифрование в режиме брони ASCII</string>
+  <string name="pref_passphrase_cache_title">Включить кэширование ключевой фразы</string>
   <!-- PasswordGenerator fragment -->
   <string name="pwgen_title">Сгенерировать пароль</string>
   <string name="pwgen_generate">Сгенерировать</string>
@@ -125,6 +130,7 @@
   <string name="pwgen_no_chars_error">Не включать символы</string>
   <string name="pwgen_length_too_short_error">Длина не соответствует выбранным критериям</string>
   <string name="pwgen_max_iterations_exceeded">Не удалось создать пароль, удовлетворяющий ограничениям. Попробуйте увеличить длину.</string>
+  <string name="pwgen_separator">Разделитель</string>
   <!-- Password generator prefs -->
   <string name="pref_password_generator_type_title">Тип генератора паролей</string>
   <!-- ssh keygen fragment -->
@@ -256,7 +262,6 @@
   <string name="preference_custom_public_suffixes_title">Пользовательские домены</string>
   <string name="preference_custom_public_suffixes_summary">Автозаполнение будет разделять поддомены этих доменов</string>
   <string name="preference_custom_public_suffixes_hint">company.com\npersonal.com</string>
-  <!-- OpenKeychain errors -->
   <!-- Password creation failure -->
   <string name="password_creation_file_fail_title">Ошибка</string>
   <string name="password_creation_file_write_fail_message">Не удалось записать файл пароля в хранилище, пожалуйста, повторите попытку.</string>
@@ -264,14 +269,17 @@
   <string name="password_creation_duplicate_error">Файл с таким названием уже существует! Используйте другое имя</string>
   <string name="add_otp">Добавить OTP</string>
   <string name="otp_import_success">Конфигурация TOTP успешно импортирована</string>
-  <string name="otp_import_failure">Не удалось импортировать конфигурацию TOTP</string>
+  <string name="otp_import_failure_generic">Не удалось импортировать конфигурацию TOTP</string>
+  <string name="otp_import_failure_no_selection">Не выбран файл изображения</string>
   <string name="exporting_passwords">Экспорт паролей…</string>
+  <string name="invalid_gpg_id">Найден .gpg-id, но он содержит неверный ID ключа, fingerprint или ID пользователя</string>
   <string name="invalid_filename_text">Имя файла не должно содержать \'/\', укажите директорию выше</string>
   <string name="directory_hint">Директория</string>
   <string name="new_folder_set_gpg_key">Установить GPG ключ для каталога</string>
   <!-- GitException messages -->
   <string name="git_unknown_error">Неизвестная ошибка</string>
   <string name="git_pull_rebase_fail_error">Не удалось получить изменения, вы находитесь в состоянии \"оторванной головы\". Используйте \"настройки &gt; утилиты git\", сохраните ваши изменения в новую удаленную ветку и разрешите конфликты на своем компьютере.</string>
+  <string name="git_pull_merge_fail_error">Слияние не удалось, вы находитесь в конфликтующем состоянии. ВТО: Добавьте метод восстановления.</string>
   <string name="git_push_nff_error">Запись изменений была отклонена удаленным репозиторием, сначала пполучите изменения перед повторной записью. Вы можете использовать Синхронизацию вместо получения/записи изменений, т.к. она реализует оба подхда.</string>
   <string name="git_push_generic_error">Запись изменений была отклонена удаленным репозиторием, причина: %1$s</string>
   <string name="git_push_other_error">Удаленный репозиторий отклонил запись изменений без быстрой перемотки вперед. Проверьте переменную receive.denyNonFastForwards в файле конфигурации репозитория назначения.</string>
@@ -279,8 +287,8 @@
   <string name="git_operation_running">Выполнение операции git…</string>
   <string name="git_break_out_of_detached_success">При попытке rebase\'а возник конфликт. Ваша локальная ветка %1$s была запушена %2$s\n Используйте эту ветку для разрешения конфликтов с помощью компьютера</string>
   <string name="git_break_out_of_detached_unneeded">Не нужно пушить в другую ветку - rebase не был запущен</string>
-  <!-- OpenKeychain not installed -->
   <!-- GPG key selection in folder creation -->
+  <string name="gpg_key_select_mandatory">Для продолжения необходимо выбрать GPG-ключ</string>
   <string name="folder_creation_err_file_exists">Файл с таким именем уже существует</string>
   <string name="folder_creation_err_folder_exists">Папка с таким именем уже существует</string>
   <!-- Onboarding flow -->
@@ -300,6 +308,7 @@
   <string name="git_scheme_disallowed_title">Использование протокола git нежелательно</string>
   <string name="git_scheme_disallowed_message">Протокол git, предоставляемый демоном, не обеспечивает транспортного шифрования и не подходит для безопасных операций.</string>
   <!-- Proxy configuration activity -->
+  <string name="activity_proxy_label">Настройки прокси-сервера</string>
   <string name="proxy_hostname">Хост прокси</string>
   <string name="port">Порт</string>
   <string name="pref_edit_proxy_settings">Настройки HTTP(S) прокси</string>
@@ -308,7 +317,11 @@
   <string name="clear_saved_host_key">Очистить сохраненный ключ хоста</string>
   <string name="clear_saved_host_key_success">Сохраненный ключ хоста был успешно удален!</string>
   <string name="otp_import_qr_code">Отсканировать QR-код</string>
+  <string name="otp_import_from_file">Выберите изображение</string>
   <string name="otp_import_manual_entry">Ввести вручную</string>
   <string name="otp_import_manual_hint_account">Учетная запись</string>
   <string name="place_shortcut_on_home_screen">Разместить ярлык на рабочем столе</string>
+  <string name="password_list_fab_content_description">Создать новый пароль или папку</string>
+  <string name="pgp_key_import_failed">Не удалось импортировать PGP-ключ</string>
+  <string name="pgp_key_import_succeeded">PGP ключ успешно импортирован</string>
 </resources>
